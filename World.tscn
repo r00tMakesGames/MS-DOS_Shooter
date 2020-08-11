@@ -1,11 +1,15 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Zombie.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://GUN_FIRE-GoodSoundForYou-820112263.wav" type="AudioStream" id=3]
 
 [node name="World" type="Spatial"]
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
+
+[node name="sound" type="AudioStreamPlayer" parent="Player"]
+stream = ExtResource( 3 )
 
 [node name="Zombie" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.27075, 0, -4.41969 )
